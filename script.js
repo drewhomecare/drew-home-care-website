@@ -78,7 +78,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal, .reveal-child').forEach(el => revealObserver.observe(el));
 
-/* ---- Contact form — Formspree AJAX submission ---- */
+/* ---- Contact form — Netlify Forms AJAX submission ---- */
 const form        = document.getElementById('contact-form');
 const formSuccess = document.getElementById('form-success');
 const formError   = document.getElementById('form-error');
@@ -96,17 +96,16 @@ if (form) {
     formError.hidden   = true;
 
     try {
-      const response = await fetch(form.action, {
+      const response = await fetch('/', {
         method:  'POST',
-        body:    new FormData(form),
-        headers: { Accept: 'application/json' },
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body:    new URLSearchParams(new FormData(form)).toString(),
       });
 
       if (response.ok) {
         form.reset();
         formSuccess.hidden = false;
         formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        // Re-initialize icons in case the success message has them
         lucide.createIcons();
       } else {
         formError.hidden = false;
