@@ -449,7 +449,9 @@
     <div class="contact-form-box fade-up">
       <h3>Request a Free Consultation</h3>
       <p>Fill out the form and we'll reach out within one business day.</p>
-      <form onsubmit="handleSubmit(event)">
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact" />
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
         <div class="form-row">
           <div class="form-group">
             <label>First Name</label>
@@ -503,14 +505,6 @@
     });
   }, { threshold: 0.12 });
   document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    var btn = e.target.querySelector('.form-submit');
-    btn.textContent = 'Message Sent! We will be in touch soon.';
-    btn.disabled = true;
-    e.target.reset();
-  }
 </script>
 </body>
 </html>
