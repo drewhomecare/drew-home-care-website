@@ -170,6 +170,9 @@
     .form-submit { width: 100%; background: var(--blue); color: white; border: none; border-radius: 50px; font-family: 'DM Sans', sans-serif; font-size: 1.05rem; font-weight: 600; padding: 14px; cursor: pointer; transition: background .2s, transform .15s; margin-top: 8px; }
     .form-submit:hover { background: var(--blue-dark); transform: translateY(-1px); }
     .form-submit:disabled { background: #1e7e4d; cursor: default; transform: none; }
+    .field-error { border-color: #c0392b !important; }
+    .error-msg { display: none; font-size: 0.85rem; color: #c0392b; margin-top: 5px; font-weight: 500; }
+    .error-msg.visible { display: block; }
 
     footer { background: var(--text); color: rgba(255,255,255,0.7); padding: 48px 6vw 32px; }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 28px; margin-bottom: 24px; }
@@ -464,11 +467,13 @@
         </div>
         <div class="form-group">
           <label>Phone Number</label>
-          <input type="tel" name="phone" placeholder="(510) 555-0000" />
+          <input type="tel" name="phone" id="phone" placeholder="(510) 555-0000" />
+          <span class="error-msg" id="phone-error">Please enter a valid phone number (e.g. 510-847-4933).</span>
         </div>
         <div class="form-group">
           <label>Email Address</label>
-          <input type="email" name="email" placeholder="jane@example.com" required />
+          <input type="email" name="email" id="email" placeholder="jane@example.com" required />
+          <span class="error-msg" id="email-error">Please enter a valid email address (e.g. name@example.com).</span>
         </div>
 
         <div class="form-group">
@@ -505,6 +510,70 @@
     });
   }, { threshold: 0.12 });
   document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+
+  var phoneInput = document.getElementById('phone');
+  var emailInput = document.getElementById('email');
+  var phoneError = document.getElementById('phone-error');
+  var emailError = document.getElementById('email-error');
+
+  function validatePhone(value) {
+    if (!value) return true; // phone is optional
+    return /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(value.trim());
+  }
+
+  function validateEmail(value) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+  }
+
+  phoneInput.addEventListener('blur', function() {
+    if (!validatePhone(this.value)) {
+      this.classList.add('field-error');
+      phoneError.classList.add('visible');
+    } else {
+      this.classList.remove('field-error');
+      phoneError.classList.remove('visible');
+    }
+  });
+
+  phoneInput.addEventListener('input', function() {
+    if (validatePhone(this.value)) {
+      this.classList.remove('field-error');
+      phoneError.classList.remove('visible');
+    }
+  });
+
+  emailInput.addEventListener('blur', function() {
+    if (!validateEmail(this.value)) {
+      this.classList.add('field-error');
+      emailError.classList.add('visible');
+    } else {
+      this.classList.remove('field-error');
+      emailError.classList.remove('visible');
+    }
+  });
+
+  emailInput.addEventListener('input', function() {
+    if (validateEmail(this.value)) {
+      this.classList.remove('field-error');
+      emailError.classList.remove('visible');
+    }
+  });
+
+  document.querySelector('form').addEventListener('submit', function(e) {
+    var phoneOk = validatePhone(phoneInput.value);
+    var emailOk = validateEmail(emailInput.value);
+    if (!phoneOk) {
+      phoneInput.classList.add('field-error');
+      phoneError.classList.add('visible');
+    }
+    if (!emailOk) {
+      emailInput.classList.add('field-error');
+      emailError.classList.add('visible');
+    }
+    if (!phoneOk || !emailOk) {
+      e.preventDefault();
+    }
+  });
 </script>
 </body>
 </html>
