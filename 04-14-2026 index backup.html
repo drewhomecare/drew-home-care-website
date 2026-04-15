@@ -31,7 +31,7 @@
       box-shadow: 0 2px 16px rgba(47,103,178,0.06);
     }
     .nav-logo { display: flex; align-items: center; text-decoration: none; }
-    .nav-logo img { height: 44px; width: auto; }
+    .nav-logo img { height: 58px; width: auto; }
     .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
     .nav-links a { text-decoration: none; font-size: 1rem; font-weight: 500; color: var(--text-muted); transition: color .2s; }
     .nav-links a:hover { color: var(--blue); }
@@ -84,7 +84,7 @@
     .trust-chip { display: flex; align-items: center; gap: 7px; font-size: 0.9rem; color: var(--text-muted); font-weight: 500; }
     .hero-image { position: relative; z-index: 1; display: flex; justify-content: center; }
     .hero-image-wrap { position: relative; width: 100%; max-width: 520px; }
-    .hero-img-main { width: 100%; border-radius: 24px 24px 80px 24px; object-fit: cover; height: 540px; box-shadow: var(--shadow-lg); }
+    .hero-img-main { width: 100%; border-radius: 24px 24px 80px 24px; object-fit: cover; object-position: center top; height: 540px; box-shadow: var(--shadow-lg); }
     .hero-float-card {
       position: absolute; bottom: 32px; left: -36px;
       background: var(--white); border-radius: 14px; padding: 16px 20px;
@@ -109,14 +109,14 @@
     .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px; }
     .service-card { background: var(--white); border-radius: var(--radius); padding: 28px 24px; box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s; border: 1px solid rgba(47,103,178,0.07); }
     .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
-    .service-icon { width: 54px; height: 54px; border-radius: 14px; background: var(--blue-light); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
-    .service-icon img { width: 28px; height: 28px; }
+    .service-icon { width: 81px; height: 81px; border-radius: 18px; background: var(--blue-light); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+    .service-icon img { width: 42px; height: 42px; }
     .service-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
     .service-card p { font-size: 0.975rem; color: var(--text-muted); line-height: 1.6; }
 
     .why { background: var(--white); }
     .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
-    .why-image img { width: 100%; border-radius: var(--radius) var(--radius) 60px var(--radius); object-fit: cover; height: 480px; box-shadow: var(--shadow-lg); }
+    .why-image img { width: 100%; border-radius: var(--radius) var(--radius) 60px var(--radius); object-fit: cover; object-position: center center; height: 480px; box-shadow: var(--shadow-lg); }
     .why-list { list-style: none; display: flex; flex-direction: column; gap: 22px; margin-top: 32px; }
     .why-list li { display: flex; align-items: flex-start; gap: 16px; }
     .why-check { flex-shrink: 0; width: 30px; height: 30px; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 3px; }
@@ -125,17 +125,17 @@
     .why-list span { font-size: 0.975rem; color: var(--text-muted); line-height: 1.5; }
 
     .about { background: var(--blue-dark); color: var(--white); }
-    .about-inner { display: grid; grid-template-columns: 340px 1fr; gap: 70px; align-items: center; }
+    .about-inner { display: grid; grid-template-columns: 170px 1fr; gap: 50px; align-items: center; }
     .about-photo-wrap { position: relative; }
-    .about-photo { width: 100%; border-radius: var(--radius); object-fit: cover; box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
-    .about-badge { position: absolute; bottom: -18px; right: -18px; background: var(--blue); color: white; padding: 14px 18px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; line-height: 1.6; box-shadow: 0 4px 20px rgba(0,0,0,0.25); max-width: 180px; }
+    .about-photo { width: 100%; border-radius: var(--radius); object-fit: cover; object-position: center top; box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
+    .about-badge { position: absolute; bottom: -48px; right: -18px; background: var(--blue); color: white; padding: 14px 18px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; line-height: 1.6; box-shadow: 0 4px 20px rgba(0,0,0,0.25); max-width: 180px; }
     .about .section-tag { color: #90b8f0; }
     .about .section-title { color: var(--white); }
     .about-text { font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.82); margin-bottom: 18px; font-style: italic; }
-    .about-sig { font-size: 1.05rem; color: rgba(255,255,255,0.6); font-weight: 500; margin-top: 24px; }
+    .about-sig { font-size: 1.05rem; color: rgba(255,255,255,1); font-weight: 500; margin-top: 24px; }
     .mission-box { margin-top: 36px; }
     .mission-label { font-size: 0.85rem; color: rgba(255,255,255,0.6); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
-    .mission-text { font-size: 1.15rem; color: rgba(255,255,255,0.9); line-height: 1.7; font-family: 'Playfair Display', serif; font-style: italic; }
+    .mission-text { font-size: 1.15rem; color: rgba(255,255,255,0.9); line-height: 1.7; font-family: 'DM Sans', sans-serif; font-style: normal; }
 
     .how { background: var(--warm); }
     .steps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
@@ -170,10 +170,13 @@
     .form-submit { width: 100%; background: var(--blue); color: white; border: none; border-radius: 50px; font-family: 'DM Sans', sans-serif; font-size: 1.05rem; font-weight: 600; padding: 14px; cursor: pointer; transition: background .2s, transform .15s; margin-top: 8px; }
     .form-submit:hover { background: var(--blue-dark); transform: translateY(-1px); }
     .form-submit:disabled { background: #1e7e4d; cursor: default; transform: none; }
+    .field-error { border-color: #c0392b !important; }
+    .error-msg { display: none; font-size: 0.85rem; color: #c0392b; margin-top: 5px; font-weight: 500; }
+    .error-msg.visible { display: block; }
 
     footer { background: var(--text); color: rgba(255,255,255,0.7); padding: 48px 6vw 32px; }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 28px; margin-bottom: 24px; }
-    .footer-logo img { height: 40px; filter: brightness(0) invert(1); opacity: 0.85; }
+    .footer-logo img { height: 53px; filter: brightness(0) invert(1); opacity: 0.85; }
     .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
     .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.975rem; transition: color .2s; }
     .footer-links a:hover { color: white; }
@@ -187,7 +190,8 @@
       .nav-links { display: none; }
       .hero { grid-template-columns: 1fr; padding: 100px 6vw 60px; }
       .hero-image { order: -1; }
-      .hero-img-main { height: 340px; }
+      .hero-img-main { height: 300px; object-position: center top; }
+      .why-image img { height: 300px; object-position: center center; }
       .hero-float-card { display: none; }
       .why-inner, .about-inner, .contact-inner { grid-template-columns: 1fr; gap: 40px; }
       .steps-grid { grid-template-columns: 1fr; }
@@ -204,7 +208,7 @@
 
 <nav>
   <a href="#" class="nav-logo">
-    <img src="images/DHC_logo_LargeText_Transparent.png" alt="Drew Home Care" />
+    <img src="images/DHCLogo_NoText_Transparent.png" alt="Drew Home Care" />
   </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
@@ -449,42 +453,33 @@
     <div class="contact-form-box fade-up">
       <h3>Request a Free Consultation</h3>
       <p>Fill out the form and we'll reach out within one business day.</p>
-      <form onsubmit="handleSubmit(event)">
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact" />
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
         <div class="form-row">
           <div class="form-group">
             <label>First Name</label>
-            <input type="text" placeholder="Jane" required />
+            <input type="text" name="first-name" placeholder="Jane" required />
           </div>
           <div class="form-group">
             <label>Last Name</label>
-            <input type="text" placeholder="Smith" required />
+            <input type="text" name="last-name" placeholder="Smith" required />
           </div>
         </div>
         <div class="form-group">
           <label>Phone Number</label>
-          <input type="tel" placeholder="(510) 555-0000" />
+          <input type="tel" name="phone" id="phone" placeholder="(510) 555-0000" />
+          <span class="error-msg" id="phone-error">Please enter a valid phone number (e.g. 510-847-4933).</span>
         </div>
         <div class="form-group">
           <label>Email Address</label>
-          <input type="email" placeholder="jane@example.com" required />
+          <input type="email" name="email" id="email" placeholder="jane@example.com" required />
+          <span class="error-msg" id="email-error">Please enter a valid email address (e.g. name@example.com).</span>
         </div>
-        <div class="form-group">
-          <label>Type of Care Needed</label>
-          <select>
-            <option value="">Select a service...</option>
-            <option>Assistance with Daily Living</option>
-            <option>Personal Care Services</option>
-            <option>Companionship &amp; Social Support</option>
-            <option>Medication Reminders</option>
-            <option>Meal Preparation &amp; Nutrition</option>
-            <option>Transportation Services</option>
-            <option>Home Safety Evaluation</option>
-            <option>Multiple / Not Sure</option>
-          </select>
-        </div>
+
         <div class="form-group">
           <label>Tell Us About Your Needs</label>
-          <textarea placeholder="Share anything that would help us prepare for our conversation..."></textarea>
+          <textarea name="message" placeholder="Share anything that would help us prepare for our conversation..."></textarea>
         </div>
         <button type="submit" class="form-submit">Send Message &rarr;</button>
       </form>
@@ -495,7 +490,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">
-      <img src="images/DHC_logo_LargeText_Transparent.png" alt="Drew Home Care" />
+      <img src="images/DHCLogo_NoText_Transparent.png" alt="Drew Home Care" />
     </div>
     <div class="footer-links">
       <a href="#services">Services</a>
@@ -506,7 +501,7 @@
     </div>
     <a href="tel:5108474933" class="btn-primary" style="font-size:0.975rem; padding:10px 24px;">(510) 847-4933</a>
   </div>
-  <p class="footer-copy">&copy; 2025 Drew Home Care. All rights reserved. | California HCO License #014700266 | Serving Alameda &amp; Contra Costa Counties</p>
+  <p class="footer-copy">&copy; 2026 Drew Home Care. All rights reserved. | California HCO License #014700266 | Serving Alameda &amp; Contra Costa Counties</p>
 </footer>
 
 <script>
@@ -517,13 +512,69 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    var btn = e.target.querySelector('.form-submit');
-    btn.textContent = 'Message Sent! We will be in touch soon.';
-    btn.disabled = true;
-    e.target.reset();
+  var phoneInput = document.getElementById('phone');
+  var emailInput = document.getElementById('email');
+  var phoneError = document.getElementById('phone-error');
+  var emailError = document.getElementById('email-error');
+
+  function validatePhone(value) {
+    if (!value) return true; // phone is optional
+    return /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(value.trim());
   }
+
+  function validateEmail(value) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+  }
+
+  phoneInput.addEventListener('blur', function() {
+    if (!validatePhone(this.value)) {
+      this.classList.add('field-error');
+      phoneError.classList.add('visible');
+    } else {
+      this.classList.remove('field-error');
+      phoneError.classList.remove('visible');
+    }
+  });
+
+  phoneInput.addEventListener('input', function() {
+    if (validatePhone(this.value)) {
+      this.classList.remove('field-error');
+      phoneError.classList.remove('visible');
+    }
+  });
+
+  emailInput.addEventListener('blur', function() {
+    if (!validateEmail(this.value)) {
+      this.classList.add('field-error');
+      emailError.classList.add('visible');
+    } else {
+      this.classList.remove('field-error');
+      emailError.classList.remove('visible');
+    }
+  });
+
+  emailInput.addEventListener('input', function() {
+    if (validateEmail(this.value)) {
+      this.classList.remove('field-error');
+      emailError.classList.remove('visible');
+    }
+  });
+
+  document.querySelector('form').addEventListener('submit', function(e) {
+    var phoneOk = validatePhone(phoneInput.value);
+    var emailOk = validateEmail(emailInput.value);
+    if (!phoneOk) {
+      phoneInput.classList.add('field-error');
+      phoneError.classList.add('visible');
+    }
+    if (!emailOk) {
+      emailInput.classList.add('field-error');
+      emailError.classList.add('visible');
+    }
+    if (!phoneOk || !emailOk) {
+      e.preventDefault();
+    }
+  });
 </script>
 </body>
 </html>
